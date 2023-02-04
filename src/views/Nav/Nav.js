@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Routes } from "../../routes/Routes";
-import NavDropdownItem from "./components/NavDropdownItem";
+import NavDropdown from "./components/NavDropdown";
 
 function Nav() {
     const [dark, setDark] = useState(true);
@@ -17,9 +17,9 @@ function Nav() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbar">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <NavDropdownItem>
-                                <p>Olá</p>
-                            </NavDropdownItem>
+                            <NavDropdown text="Curvas">
+                                
+                            </NavDropdown>
                         </ul>
                         <form className="d-flex" role="search">
                             <div className="form-check form-switch">
