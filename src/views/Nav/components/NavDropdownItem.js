@@ -1,10 +1,9 @@
 function NavDropdownItem(props) {
     return (
         <li className="nav-item dropdown">
-            <a className="nav-link active dropdown-toggle" href={'/'} role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-            </a>
+            <button className="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Curvas
+            </button>
             <ul className="dropdown-menu">
                 <li><a className="dropdown-item" href={'/'}>Action</a></li>
                 <li><a className="dropdown-item" href={'/'}>Another action</a></li>

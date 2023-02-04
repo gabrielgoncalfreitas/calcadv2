@@ -17,7 +17,9 @@ function Nav() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbar">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <NavDropdownItem />
+                            <NavDropdownItem>
+                                <p>Olá</p>
+                            </NavDropdownItem>
                         </ul>
                         <form className="d-flex" role="search">
                             <div className="form-check form-switch">
