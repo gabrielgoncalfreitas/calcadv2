@@ -1,11 +1,11 @@
 function NavDropdown(props) {
     return (
-        <li className="nav-item dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button"
-                data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
-                {props.text}
+        <li className={`nav-item dropdown ${props.addClass}`}>
+            <button className="btn btn-secondary dropdown-toggle" type="button"
+                data-bs-toggle="dropdown" data-bs-auto-close={props.close} aria-expanded="false">
+                {props.title}
             </button>
-            <ul className="dropdown-menu dropend dropdown-menu-dark">
+            <ul className={`dropdown-menu dropend ${'dropdown-menu-' + props.theme}`}>
                 {props.children}
             </ul>
         </li>
