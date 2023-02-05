@@ -1,9 +1,9 @@
-import Nav from "../Nav/Nav";
+import Default from "./Default";
 
 export default function Home() {
     return (
-        <>
-            <Nav />
-        </>
+        <Default>
+
+        </Default>
     );
 }
