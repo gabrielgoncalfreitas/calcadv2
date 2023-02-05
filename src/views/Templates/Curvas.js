@@ -1,11 +1,10 @@
 import CurvasForm from "../Curvas/CurvasForm";
-import Nav from "../Nav/Nav";
+import Default from "./Default";
 
 export default function Curvas() {
     return (
-        <>
-            <Nav />
+        <Default>
             <CurvasForm />
-        </>
+        </Default>
     );
 }

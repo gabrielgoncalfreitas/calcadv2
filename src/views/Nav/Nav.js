@@ -13,14 +13,14 @@ function Nav() {
     async function toggleTheme() {
         let globalTheme;
         if (theme.isDark) { // toggle to LIGHT
-            await setTheme({
+            setTheme({
                 isDark: false,
                 lightMode: '',
                 darkMode: 'd-none'
             });
             globalTheme = 'light';
         } else { // toggle to DARK
-            await setTheme({
+            setTheme({
                 isDark: true,
                 lightMode: 'd-none',
                 darkMode: ''
@@ -37,14 +37,17 @@ function Nav() {
                 <Link className="navbar-brand" to={Routes.home}>
                     CalCAD
                 </Link>
+
                 <button className={`navbar-toggler`} type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
+
                 <div className="collapse navbar-collapse" id="navbar">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <DropdownAnchor title='Curvas' href="/curvas" />
+                        <DropdownAnchor title={Routes.curvas.title} href={Routes.curvas.path} />
+                        <DropdownAnchor title={Routes.reducoes.title} href={Routes.reducoes.path} />
                     </ul>
                     <div className={`d-flex justify-content-start m-1`} role="search">
                         <div className="me-3 user-select-none">

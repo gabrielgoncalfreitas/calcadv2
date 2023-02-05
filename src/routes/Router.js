@@ -1,4 +1,4 @@
-import About from '../views/Templates/About';
+import Reducoes from '../views/Templates/Reducoes';
 import Curvas from '../views/Templates/Curvas';
 import Home from '../views/Templates/Home';
 
@@ -12,7 +12,7 @@ export const Router = [
         element: Curvas(),
     },
     {
-        path: '/about',
-        element: About(),
+        path: '/reducoes',
+        element: Reducoes(),
     },
 ]

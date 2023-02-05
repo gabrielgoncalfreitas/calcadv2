@@ -3,7 +3,7 @@ import { Routes } from "../../routes/Routes";
 import NumberField from "../Components/NumberField";
 import RadioField from "../Components/RadioField";
 
-function CurvasForm() {
+function ReducoesForm() {
     return (
         <div className="container mt-5 p-5" data-aos="fade-up">
             <div className="d-flex align-items-center justify-content-center">
@@ -12,7 +12,7 @@ function CurvasForm() {
                         <div className="card-header d-flex justify-content-between m-0">
                             <div></div>
                             <h4 className="user-select-none m-0 ms-4">
-                                Desenvolvimento de Curvas
+                                Desenvolvimento de Reducoes
                             </h4>
 
                             <div class="justify-self-end me-2">
@@ -23,16 +23,16 @@ function CurvasForm() {
                             <div className="row">
                                 <div className="row m-0">
                                     <div className="col-md-12 d-flex justify-content-around">
-                                        <RadioField name='flexRadioCurva' id='flexRadioCurva90' title='90°' checked={true} />
-                                        <RadioField name='flexRadioCurva' id='flexRadioCurva45' title='45°' />
-                                        <RadioField name='flexRadioCurva' id='flexRadioCurva30' title='30°' />
+                                        <RadioField name='flexRadioReducoes' id='flexRadioReducoes90' title='90°' checked={true} />
+                                        <RadioField name='flexRadioReducoes' id='flexRadioReducoes45' title='45°' />
+                                        <RadioField name='flexRadioReducoes' id='flexRadioReducoes30' title='30°' />
                                     </div>
                                 </div>
 
                                 <div className="row m-0 mt-2">
                                     <div className="col-md-12 d-flex justify-content-around">
-                                        <RadioField name='flexRadioCurvaAco' id='flexRadioCurvaAcoInox' title='Inox' checked={true} />
-                                        <RadioField name='flexRadioCurvaAco' id='flexRadioCurvaAcoCarbono' title='Carbono' />
+                                        <RadioField name='flexRadioReducoesAco' id='flexRadioReducoesAcoInox' title='Inox' checked={true} />
+                                        <RadioField name='flexRadioReducoesAco' id='flexRadioReducoesAcoCarbono' title='Carbono' />
                                     </div>
                                 </div>
 
@@ -95,4 +95,4 @@ function CurvasForm() {
     );
 }
 
-export default CurvasForm;
+export default ReducoesForm;

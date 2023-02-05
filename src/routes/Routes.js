@@ -1,4 +1,14 @@
 export const Routes = {
-    home: '/',
-    curvas: '/curvas'
+    home: {
+        path: '/',
+        title: 'Home'
+    },
+    curvas: {
+        path: '/curvas',
+        title: 'Curvas'
+    },
+    reducoes: {
+        path: '/reducoes',
+        title: 'Reduções'
+    },
 };
