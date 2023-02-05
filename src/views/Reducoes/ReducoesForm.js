@@ -5,18 +5,18 @@ import RadioField from "../Components/RadioField";
 
 function ReducoesForm() {
     return (
-        <div className="container mt-5 p-5" data-aos="fade-up">
+        <div className="container" data-aos="fade-up">
             <div className="d-flex align-items-center justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
                         <div className="card-header d-flex justify-content-between m-0">
                             <div></div>
-                            <h4 className="user-select-none m-0 ms-4">
-                                Desenvolvimento de Reducoes
+                            <h4 className="user-select-none m-0 ms-4 text-center">
+                                Desenvolvimento de Reduções
                             </h4>
 
-                            <div class="justify-self-end me-2">
-                                <Link type="button" class="btn-close" aria-label="Close" to={Routes.home} />
+                            <div className="justify-self-end me-2">
+                                <Link type="button" className="btn-close" aria-label="Close" to={Routes.home} />
                             </div>
                         </div>
                         <div className="card-body">

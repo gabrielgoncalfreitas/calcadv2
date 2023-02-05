@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 function Footer() {
     return (
-        <footer class="text-center fixed-bottom m-0 py-2 border-top">
-            <div class="text-center">
+        <footer className="text-center fixed-bottom m-0 py-2 border-top">
+            <div className="text-center">
                 <div>
                     Made by: Gabriel G. Freitas
 

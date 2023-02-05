@@ -6,34 +6,34 @@ import './assets/js/Calculo'
 
 function CurvasForm() {
     return (
-        <div className="container mt-5 p-5" data-aos="fade-up">
+        <div className="container container-body mb-5 pb-5" data-aos="fade-up">
             <div className="d-flex align-items-center justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
                         <div className="card-header d-flex justify-content-between m-0">
                             <div></div>
-                            <h4 className="user-select-none m-0 ms-4">
+                            <h4 className="user-select-none m-0 ms-4 text-center">
                                 Desenvolvimento de Curvas
                             </h4>
 
-                            <div class="justify-self-end me-2">
-                                <Link type="button" class="btn-close" aria-label="Close" to={Routes.home} />
+                            <div className="justify-self-end me-2">
+                                <Link type="button" className="btn-close" aria-label="Close" to={Routes.home} />
                             </div>
                         </div>
                         <div className="card-body">
                             <div className="row">
                                 <div className="row m-0">
                                     <div className="col-md-12 d-flex justify-content-around">
-                                        <RadioField name='flexRadioCurva' id='flexRadioCurva90' title='90°' checked={true} />
-                                        <RadioField name='flexRadioCurva' id='flexRadioCurva45' title='45°' />
-                                        <RadioField name='flexRadioCurva' id='flexRadioCurva30' title='30°' />
+                                        <RadioField name='curva' id='curva90' title='90°' value='90' defaultChecked={true} />
+                                        <RadioField name='curva' id='curva45' title='45°' value='45' />
+                                        <RadioField name='curva' id='curva30' title='30°' value='30' />
                                     </div>
                                 </div>
 
                                 <div className="row m-0 mt-2">
                                     <div className="col-md-12 d-flex justify-content-around">
-                                        <RadioField name='flexRadioCurvaAco' id='flexRadioCurvaAcoInox' title='Inox' checked={true} />
-                                        <RadioField name='flexRadioCurvaAco' id='flexRadioCurvaAcoCarbono' title='Carbono' />
+                                        <RadioField name='aco' id='acoInox' title='Inox' defaultChecked={true} />
+                                        <RadioField name='aco' id='acoCarbono' title='Carbono' />
                                     </div>
                                 </div>
 
