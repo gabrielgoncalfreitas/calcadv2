@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Routes } from "../../routes/Routes";
 import NumberField from "../Components/NumberField";
 import RadioField from "../Components/RadioField";
+import './assets/js/Calculo'
 
 function CurvasForm() {
     return (
