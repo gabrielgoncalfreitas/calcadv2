@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 export default function DropdownAnchor(props) {
     return (
         <li>
-            <a className={`dropdown-item ${'text-' + props.themeFont}`} href={props.href}>
+            <Link className='nav-link active' data-bs-theme={props.theme} to={props.href}>
                 {props.title}
-            </a>
+            </Link>
         </li>
     );
 };

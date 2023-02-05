@@ -5,7 +5,7 @@ export default function DropdownDropdown(props) {
                 data-bs-toggle="dropdown" data-bs-auto-close={props.close} aria-expanded="false">
                 {props.title}
             </div>
-            <ul className={`dropdown-menu dropend ${'dropdown-menu-' + props.theme}`}>
+            <ul className='dropdown-menu dropend' data-bs-theme={props.theme}>
                 {props.children}
             </ul>
         </li>
