@@ -6,7 +6,6 @@ export default function RadioField(props) {
                 id={props.id}
                 defaultChecked={props.defaultChecked}
                 value={props.value}
-                onChange={props.onChange}
             />
             <label className="form-check-label" htmlFor={props.id}>
                 {props.title}

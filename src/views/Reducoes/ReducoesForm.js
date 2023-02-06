@@ -5,7 +5,7 @@ import RadioField from "../Components/RadioField";
 
 function ReducoesForm() {
     return (
-        <div className="container" data-aos="fade-up">
+        <div className="container mt-5 pt-5" data-aos="fade-up">
             <div className="d-flex align-items-center justify-content-center">
                 <div className="col-md-8">
                     <div className="card">
