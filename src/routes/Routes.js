@@ -11,4 +11,8 @@ export const Routes = {
         path: '/reducoes',
         title: 'Reduções'
     },
+    te: {
+        path: '/te',
+        title: 'Te\'s'
+    },
 };

@@ -50,6 +50,7 @@ function Nav() {
                     <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                         <DropdownAnchor title={Routes.curvas.title} href={Routes.curvas.path} />
                         <DropdownAnchor title={Routes.reducoes.title} href={Routes.reducoes.path} />
+                        <DropdownAnchor title={Routes.te.title} href={Routes.te.path} />
                     </ul>
                     <div className='d-flex justify-content-start m-1' role='search'>
                         <div className='me-3 user-select-none'>
