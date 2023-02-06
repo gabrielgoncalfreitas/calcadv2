@@ -1,27 +1,36 @@
 import { Global } from "../../../../Global";
 
-function CalcularPesoRaioCurto(diametro, pesoAco, espessura) {
-    let peso = parseFloat(((((diametro * Global.pi) / 2) * (diametro * Global.pi)) / 1000000) * pesoAco * espessura);
+function CalcularPeso(diametro, espessura, curva, raio, aco) {
+    function raioCurto() {
+        return parseFloat(((((diametro * Global.pi) / 2) * (diametro * Global.pi)) / 1000000) * pesoAco * espessura);
+    }
+
+    function raioLongo() {
+        return parseFloat((((((diametro * 1.5) * Global.pi) / 2) * (diametro * Global.pi)) / 1000000) * pesoAco * espessura);
+    }
+    //=======================================================================================================================
+    let pesoAco = aco === 'inox' ? Global.pesoAcoInox : Global.pesoAcoCarbono;
+    let peso = raio === 'curto' ? raioCurto() : raioLongo();
+
+    switch (curva) {
+        case '90':
+            peso = peso;
+            break;
+        case '45':
+            peso = parseFloat(peso / 2);
+            break;
+        case '30':
+            peso = parseFloat(peso / 3);
+            break;
+        default:
+            break;
+    }
+
     let pesoLiquido = parseFloat(peso);
     let pesoBruto = parseFloat(peso * 1.05);
 
-    pesoLiquido = isNaN(pesoLiquido) ? 0 : pesoLiquido.toFixed(2).replace(".", ",") + " kg";
-    pesoBruto = isNaN(pesoBruto) ? 0 : pesoBruto.toFixed(2).replace(".", ",") + " kg";
-
-    document.querySelector("#floatingPesoLiquido").value = pesoLiquido;
-    document.querySelector("#floatingPesoBruto").value = pesoBruto;
-}
-
-function CalcularPesoRaioLongo(diametro, pesoAco, espessura) {
-    let peso = parseFloat((((((diametro * 1.5) * Global.pi) / 2) * (diametro * Global.pi)) / 1000000) * pesoAco * espessura);
-    let pesoLiquido = parseFloat(peso);
-    let pesoBruto = parseFloat(peso * 1.05);
-
-    pesoLiquido = isNaN(pesoLiquido) ? 0 : pesoLiquido.toFixed(2).replace(".", ",") + " kg";
-    pesoBruto = isNaN(pesoBruto) ? 0 : pesoBruto.toFixed(2).replace(".", ",") + " kg";
-
-    document.querySelector("#floatingPesoLiquido").value = pesoLiquido;
-    document.querySelector("#floatingPesoBruto").value = pesoBruto;
+    document.querySelector("#pesoLiquido").value = isNaN(pesoLiquido) ? null : pesoLiquido.toFixed(2).replace(".", ",") + " kg";
+    document.querySelector("#pesoBruto").value = isNaN(pesoBruto) ? null : pesoBruto.toFixed(2).replace(".", ",") + " kg";
 }
 
 function CalcularDimensoes(diametro) {
@@ -29,36 +38,19 @@ function CalcularDimensoes(diametro) {
     let comprimento = parseFloat(diametro * Global.pi);
     let area = parseFloat((largura * comprimento) / 1000000);
 
-    largura = isNaN(largura) ? 0 : largura.toFixed(2).replace(".", ",") + " mm";
-    comprimento = isNaN(comprimento) ? 0 : comprimento.toFixed(2).replace(".", ",") + " mm";
-    area = isNaN(area) ? 0 : area.toFixed(2).replace(".", ",") + " m²";
-
-    document.querySelector("#floatingLargura").value = largura;
-    document.querySelector("#floatingComprimento").value = comprimento;
-    document.querySelector("#floatingArea").value = area;
+    document.querySelector("#largura").value = isNaN(largura) ? null : largura.toFixed(2).replace(".", ",") + " mm";
+    document.querySelector("#comprimento").value = isNaN(comprimento) ? null : comprimento.toFixed(2).replace(".", ",") + " mm";
+    document.querySelector("#area").value = isNaN(area) ? null : area.toFixed(2).replace(".", ",") + " m²";
 }
 
 function CalcularCurva() {
-    let diametro = parseFloat(document.querySelector('#floatingDn').value);
-    let espessura = parseFloat(document.querySelector('#floatingEspessura').value);
+    let diametro = parseFloat(document.querySelector('#dn').value);
+    let espessura = parseFloat(document.querySelector('#espessura').value);
 
-    // let curva = document.querySelector('input[name="curva"]:checked').value;
-
-    let pesoAco;
+    let curva = document.querySelector('input[name="curva"]:checked').value;
     let aco = document.querySelector('input[name="aco"]:checked').value;
-    if (aco === 'inox') {
-        pesoAco = Global.pesoAcoInox;
-    } else {
-        pesoAco = Global.pesoAcoCarbono;
-    }
-
     let raio = document.querySelector('input[name="raio"]:checked').value;
-    if (raio === 'curto') {
-        CalcularPesoRaioCurto(diametro, pesoAco, espessura);
-    } else {
-        CalcularPesoRaioLongo(diametro, pesoAco, espessura);
-    }
-
+    CalcularPeso(diametro, espessura, curva, raio, aco);
     CalcularDimensoes(diametro);
 }
 

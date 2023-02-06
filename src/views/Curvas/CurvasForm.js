@@ -25,34 +25,30 @@ function CurvasForm() {
                             <div className="row">
                                 <div className="row m-0 mt-2">
                                     <div className="col-md-12 d-flex justify-content-around">
-                                        <div className="col-md-4 d-flex justify-content-center"><RadioField name='curva' value='90' id='curva90' title='90°' defaultChecked={true} /></div>
-                                        <div className="col-md-4 d-flex justify-content-center"><RadioField name='curva' value='45' id='curva45' title='45°' /></div>
-                                        <div className="col-md-4 d-flex justify-content-center"><RadioField name='curva' value='30' id='curva30' title='30°' /></div>
+                                        <div className="col-md-4 d-flex justify-content-center"><RadioField name='curva' value='90' id='curva90' title='90°' defaultChecked={true} onChange={CalcularCurva} /></div>
+                                        <div className="col-md-4 d-flex justify-content-center"><RadioField name='curva' value='45' id='curva45' title='45°' onChange={CalcularCurva} /></div>
+                                        <div className="col-md-4 d-flex justify-content-center"><RadioField name='curva' value='30' id='curva30' title='30°' onChange={CalcularCurva} /></div>
                                     </div>
                                 </div>
 
                                 <div className="row m-0 mt-2">
                                     <div className="col-md-12 d-flex justify-content-around">
-                                        <div className="col-md-6 d-flex justify-content-center"><RadioField name='raio' value='curto' id='raioCurto' title='Curto' defaultChecked={true} /></div>
-                                        <div className="col-md-6 d-flex justify-content-center"><RadioField name='raio' value='longo' id='raioLongo' title='Longo' /></div>
+                                        <div className="col-md-6 d-flex justify-content-center"><RadioField name='raio' value='curto' id='raioCurto' title='Curto' defaultChecked={true} onChange={CalcularCurva} /></div>
+                                        <div className="col-md-6 d-flex justify-content-center"><RadioField name='raio' value='longo' id='raioLongo' title='Longo' onChange={CalcularCurva} /></div>
                                     </div>
                                 </div>
 
                                 <div className="row m-0 mt-2">
                                     <div className="col-md-12 d-flex justify-content-around">
-                                        <div className="col-md-6 d-flex justify-content-center"><RadioField name='aco' value='inox' id='acoInox' title='Inox' defaultChecked={true} /></div>
-                                        <div className="col-md-6 d-flex justify-content-center"><RadioField name='aco' value='carbono' id='acoCarbono' title='Carbono' /></div>
+                                        <div className="col-md-6 d-flex justify-content-center"><RadioField name='aco' value='inox' id='acoInox' title='Inox' defaultChecked={true} onChange={CalcularCurva} /></div>
+                                        <div className="col-md-6 d-flex justify-content-center"><RadioField name='aco' value='carbono' id='acoCarbono' title='Carbono' onChange={CalcularCurva} /></div>
                                     </div>
                                 </div>
 
                                 <div className="row m-0 mt-3">
                                     <div className="col-md-12">
-                                        <NumberField id='floatingDn' placeholder='D.N.' />
-                                        <NumberField id='floatingEspessura' placeholder='Espessura' />
-
-                                        <div className="row m-0 mt-3">
-                                            <button type="button" className="btn btn-outline-primary" onClick={CalcularCurva}>Calcular</button>
-                                        </div>
+                                        <NumberField id='dn' placeholder='D.N.' onKeyUp={CalcularCurva} />
+                                        <NumberField id='espessura' placeholder='Espessura' onKeyUp={CalcularCurva} />
                                     </div>
                                 </div>
 
@@ -64,11 +60,11 @@ function CurvasForm() {
 
                                 <div className="row m-0 mt-3">
                                     <div className="col-md-6">
-                                        <TextField id='floatingPesoLiquido' placeholder='Peso Líquido' readOnly={true} />
+                                        <TextField id='pesoLiquido' placeholder='Peso Líquido' readOnly={true} />
                                     </div>
 
                                     <div className="col-md-6">
-                                        <TextField id='floatingPesoBruto' placeholder='Peso Bruto' readOnly={true} />
+                                        <TextField id='pesoBruto' placeholder='Peso Bruto' readOnly={true} />
                                     </div>
                                 </div>
 
@@ -80,15 +76,15 @@ function CurvasForm() {
 
                                 <div className="row m-0">
                                     <div className="col-md-4">
-                                        <TextField id='floatingArea' placeholder='Área' readOnly={true} />
+                                        <TextField id='area' placeholder='Área' readOnly={true} />
                                     </div>
 
                                     <div className="col-md-4">
-                                        <TextField id='floatingLargura' placeholder='Largura' readOnly={true} />
+                                        <TextField id='largura' placeholder='Largura' readOnly={true} />
                                     </div>
 
                                     <div className="col-md-4">
-                                        <TextField id='floatingComprimento' placeholder='Comprimento' readOnly={true} />
+                                        <TextField id='comprimento' placeholder='Comprimento' readOnly={true} />
                                     </div>
                                 </div>
                             </div>
